@@ -1,0 +1,93 @@
+<p>formappartment works!</p>
+{{ id }}
+<div class="container">
+    <form [formGroup]="appartform">
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Num Appart</span>
+            </div>
+            <input type="text" id="numAppart" aria-label="numAppart" name="numAppart" formControlName="numAppart" class="form-control">
+          <div *ngIf="numAppart!.touched && numAppart!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">num Etage</span>
+            </div>
+            <input type="text" id="numEtage" aria-label="numEtage" name="numEtage" formControlName="numEtage" class="form-control">
+          <div *ngIf="numEtage!.touched && numEtage!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">surface</span>
+            </div>
+            <input type="text" id="surface" aria-label="surface" name="surface" formControlName="surface" class="form-control">
+          <div *ngIf="surface!.touched && surface!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">terrasse</span>
+            </div>
+            <input type="text" id="terrasse" aria-label="terrasse" name="terrasse" formControlName="terrasse" class="form-control">
+          <div *ngIf="terrasse!.touched && terrasse!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">surfaceTerrasse</span>
+            </div>
+            <input type="text" id="surfaceTerrasse" aria-label="surfaceTerrasse" name="surfaceTerrasse" formControlName="surfaceTerrasse" class="form-control">
+          <div *ngIf="surfaceTerrasse!.touched && surfaceTerrasse!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">category</span>
+            </div>
+            <input type="text" id="category" aria-label="category" name="category" formControlName="category" class="form-control">
+          <div *ngIf="category!.touched && category!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">description</span>
+            </div>
+            <input type="text" id="description" aria-label="description" name="description" formControlName="description" class="form-control">
+          <div *ngIf="description!.touched && description!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          <div *ngIf="description?.errors?.['minlength'] && description!.invalid" class="alert alert-danger">
+            min length description 10
+                      </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">residence</span>
+            </div>
+            <input type="text" id="residence" aria-label="residence" name="residence" formControlName="residence" class="form-control">
+          <div *ngIf="residence!.touched && residence!.invalid" class="alert alert-danger">
+num appart required
+          </div>
+          </div>
+          <br>
+<input type="submit" class="btn btn-primary" (click)="add()">
+
+
+    </form>
+</div>
