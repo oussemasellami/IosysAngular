@@ -12,6 +12,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { ShowappartComponent } from './showappart/showappart.component';
 import { FormappartmentComponent } from './formappartment/formappartment.component';
+import { ErrorsComponent } from './shared/errors/errors.component';
+import { ListAppartementComponent } from './list-appartement/list-appartement.component';
+import { AppartementComponent } from './appartement/appartement.component';
+import { AddAppartementComponent } from './add-appartement/add-appartement.component';
 
 
 
@@ -25,7 +29,11 @@ import { FormappartmentComponent } from './formappartment/formappartment.compone
     CardResidenceComponent,
     PageNotFoundComponent,
     ShowappartComponent,
-    FormappartmentComponent
+    FormappartmentComponent,
+    ErrorsComponent,
+    ListAppartementComponent,
+    AppartementComponent,
+    AddAppartementComponent
   ],
   imports: [
     BrowserModule,

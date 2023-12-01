@@ -6,11 +6,13 @@ import { CardResidenceComponent } from './card-residence/card-residence.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ShowappartComponent } from './showappart/showappart.component';
 import { FormappartmentComponent } from './formappartment/formappartment.component';
+import { ListAppartementComponent } from './list-appartement/list-appartement.component';
 
 const ROUTES:Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:ResidenceComponent},
   {path:'card',component:CardResidenceComponent},
+  {path:'appartment/list',component:ListAppartementComponent},
   {path:'card/showappart/:id',component:ShowappartComponent},
   {path:'card/showappart/:id/addappart/:id',component:FormappartmentComponent},
   {path:'**',component:PageNotFoundComponent} 
