@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Appartement } from '../models/appartment';
 import { Residence } from '../models/residence';
 
@@ -22,5 +22,9 @@ export class AppartementComponent {
     description:"",
     residence:this.res,
    status:true
+  }
+@Output() delev=new EventEmitter<Appartement>
+  supprimer(){
+this.delev.emit(this.app)
   }
 }

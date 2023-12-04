@@ -35,4 +35,8 @@ this.aff=!this.aff
 
   }
 
+  deleteapp(app:any){
+   this.appartementsList= this.appartementsList.filter(a=>a!==app)
+  }
+
 }

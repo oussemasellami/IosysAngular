@@ -1,13 +1,9 @@
+<div class="card m-3" style="width: 18rem">
+  <img [src]="app.residence.image" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ app.residence.name }}</h5>
+    <p class="card-text">{{ app.surface }}</p>
 
-    <div
-      class="card m-3"
-      style="width: 18rem"
-    >
-      <img [src]="app.residence.image" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{ app.residence.name }}</h5>
-        <p class="card-text">{{ app.surface }}</p>
-    
-      </div>
-    </div>
-
+    <button class="btn btn-danger" (click)="supprimer()">delete</button>
+  </div>
+</div>
