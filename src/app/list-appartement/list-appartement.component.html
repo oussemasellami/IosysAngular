@@ -4,5 +4,6 @@
 <app-add-appartement *ngIf="aff" (appform)="addappart($event)"></app-add-appartement>
 <div class="row">
 <app-appartement class="col-4" *ngFor="let i of appartementsList"
-[app]="i" (delev)="deleteapp($event)"></app-appartement>
+[app]="i" (delev)="deleteapp($event)" (updateform)="updatex($event)"></app-appartement>
 </div>
+<app-update-appartment  *ngIf="appartnew" [app]="appartnew" (updatef)="updateappartment($event)"></app-update-appartment>

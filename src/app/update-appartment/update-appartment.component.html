@@ -1,0 +1,74 @@
+<p>update-appartment works!</p>
+
+<div class="container">
+  <form [formGroup]="appartform">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Num Appart</span>
+      </div>
+      <input
+        type="text"
+        id="numAppart"
+        aria-label="numAppart"
+        name="numAppart"
+        formControlName="numAppart"
+        class="form-control"
+      />
+      <div
+        *ngIf="numAppart!.touched && numAppart!.invalid"
+        class="alert alert-danger"
+      >
+        num appart required
+      </div>
+    </div>
+
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">description</span>
+      </div>
+      <input
+        type="text"
+        id="description"
+        aria-label="description"
+        name="description"
+        formControlName="description"
+        class="form-control"
+      />
+      <div
+        *ngIf="description!.touched && description!.invalid"
+        class="alert alert-danger"
+      >
+        num appart required
+      </div>
+      <div
+        *ngIf="description?.errors?.['minlength'] && description!.invalid"
+        class="alert alert-danger"
+      >
+        min length description 10
+      </div>
+    </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">residence</span>
+      </div>
+      <input
+        type="text"
+        id="residence"
+        aria-label="residence"
+        name="residence"
+        formControlName="residence"
+        class="form-control"
+      />
+      <div
+        *ngIf="residence!.touched && residence!.invalid"
+        class="alert alert-danger"
+      >
+        num appart required
+      </div>
+    </div>
+    <br />
+    <input type="submit" class="btn btn-primary" (click)="add()" />
+  </form>
+</div>

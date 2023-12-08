@@ -9,6 +9,7 @@ import { Residence } from '../models/residence';
 })
 export class ListAppartementComponent {
 aff:boolean=false
+appartnew!:null
   imageUrl="/assets/images/"
   residencesList: Residence[]=[
     {id: 1, name: "Residence 1", address: "Address 1", image: this.imageUrl+"residence1.jpg"},
@@ -33,6 +34,16 @@ this.aff=!this.aff
   addappart(appart:Appartement){
     this.appartementsList.push(appart)
 
+  }
+  updatex(app:any){
+this.appartnew=app
+  }
+
+  updateappartment(appar:any){
+let i= this.appartementsList.findIndex(a=>a.id==appar.id)
+this.appartementsList[i]=appar
+
+this.appartnew=null
   }
 
   deleteapp(app:any){

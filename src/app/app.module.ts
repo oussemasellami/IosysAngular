@@ -16,6 +16,7 @@ import { ErrorsComponent } from './shared/errors/errors.component';
 import { ListAppartementComponent } from './list-appartement/list-appartement.component';
 import { AppartementComponent } from './appartement/appartement.component';
 import { AddAppartementComponent } from './add-appartement/add-appartement.component';
+import { UpdateAppartmentComponent } from './update-appartment/update-appartment.component';
 
 
 
@@ -33,7 +34,8 @@ import { AddAppartementComponent } from './add-appartement/add-appartement.compo
     ErrorsComponent,
     ListAppartementComponent,
     AppartementComponent,
-    AddAppartementComponent
+    AddAppartementComponent,
+    UpdateAppartmentComponent
   ],
   imports: [
     BrowserModule,

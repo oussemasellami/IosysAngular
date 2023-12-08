@@ -24,7 +24,11 @@ export class AppartementComponent {
    status:true
   }
 @Output() delev=new EventEmitter<Appartement>
+@Output() updateform=new EventEmitter<Appartement>
   supprimer(){
 this.delev.emit(this.app)
+  }
+  update(){
+    this.updateform.emit(this.app)
   }
 }
