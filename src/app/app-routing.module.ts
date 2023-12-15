@@ -10,7 +10,7 @@ import { ListAppartementComponent } from './list-appartement/list-appartement.co
 
 const ROUTES:Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
-  {path:'home',component:ResidenceComponent},
+  {path:'home',component:ResidenceComponent,},
   {path:'card',component:CardResidenceComponent},
   {path:'appartment/list',component:ListAppartementComponent},
   {path:'card/showappart/:id',component:ShowappartComponent},

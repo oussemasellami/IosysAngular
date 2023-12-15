@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Appartement } from '../models/appartment';
 import { Residence } from '../models/residence';
+import { AppartmentService } from '../services/appartment.service';
 
 @Component({
   selector: 'app-list-appartement',
   templateUrl: './list-appartement.component.html',
   styleUrls: ['./list-appartement.component.css']
 })
-export class ListAppartementComponent {
+export class ListAppartementComponent implements OnInit {
 aff:boolean=false
 appartnew!:null
   imageUrl="/assets/images/"
@@ -27,27 +28,53 @@ appartnew!:null
     {id: 6, terrasse: "Terrasse 6", numAppart: 16, numEtage: 8, surface: 420, surfaceTerrasse: 260, category: "category 6", description: "appartement desc 6", status: true ,residence: this.residencesList[2]},
 
   ]
+  listappart:[]=[]
+  constructor(private appservice:AppartmentService){
+
+  }
+  ngOnInit(): void {
+    this.appservice.getappartment().subscribe((data:any)=>{
+console.log('my list'+JSON.stringify(data))
+this.listappart=data
+    })
+  }
 
   display(){
 this.aff=!this.aff
   }
   addappart(appart:Appartement){
-    this.appartementsList.push(appart)
-
+    this.appservice.addappartment(appart).subscribe(()=>{
+      console.log("added")
+      //window.location.reload()
+    })
+   // this.appartementsList.push(appart)
+   window.location.reload()
   }
   updatex(app:any){
 this.appartnew=app
   }
 
   updateappartment(appar:any){
-let i= this.appartementsList.findIndex(a=>a.id==appar.id)
-this.appartementsList[i]=appar
+    this.appservice.updateappartment(appar.id,appar).subscribe(()=>{
+      console.log("updated")
+      window.location.reload()
+    })
+//let i= this.appartementsList.findIndex(a=>a.id==appar.id)
+//this.appartementsList[i]=appar
 
 this.appartnew=null
   }
 
   deleteapp(app:any){
-   this.appartementsList= this.appartementsList.filter(a=>a!==app)
+    this.appservice.deletappartment(app.id).subscribe(()=>{
+      console.log("deleted")
+      window.location.reload()
+    })
+   //this.appartementsList= this.appartementsList.filter(a=>a!==app)
   }
+summ!:number
 
+  sum(){
+    this.summ=this.appservice.getsumofvalue(this.appartementsList,"numAppart",21)
+  }
 }

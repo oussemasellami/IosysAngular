@@ -17,7 +17,7 @@ import { ListAppartementComponent } from './list-appartement/list-appartement.co
 import { AppartementComponent } from './appartement/appartement.component';
 import { AddAppartementComponent } from './add-appartement/add-appartement.component';
 import { UpdateAppartmentComponent } from './update-appartment/update-appartment.component';
-
+import{HttpClientModule} from '@angular/common/http'
 
 
 
@@ -41,7 +41,8 @@ import { UpdateAppartmentComponent } from './update-appartment/update-appartment
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

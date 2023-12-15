@@ -1,9 +1,21 @@
-
-
-<button class="btn btn-primary" (click)="display()" >add appartment</button>
-<app-add-appartement *ngIf="aff" (appform)="addappart($event)"></app-add-appartement>
+<button class="btn btn-primary" (click)="display()">add appartment</button>
+<app-add-appartement
+  *ngIf="aff"
+  (appform)="addappart($event)"
+></app-add-appartement>
 <div class="row">
-<app-appartement class="col-4" *ngFor="let i of appartementsList"
-[app]="i" (delev)="deleteapp($event)" (updateform)="updatex($event)"></app-appartement>
+  <app-appartement
+    class="col-4"
+    *ngFor="let i of listappart"
+    [app]="i"
+    (delev)="deleteapp($event)"
+    (updateform)="updatex($event)"
+  ></app-appartement>
 </div>
-<app-update-appartment  *ngIf="appartnew" [app]="appartnew" (updatef)="updateappartment($event)"></app-update-appartment>
+<app-update-appartment
+  *ngIf="appartnew"
+  [app]="appartnew"
+  (updatef)="updateappartment($event)"
+></app-update-appartment>
+<button class="btn btn-primary" (click)="sum()">go to sum</button>
+<div *ngIf="summ" class="alert alert-danger">the sum is : {{ summ }}</div>
